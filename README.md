@@ -8,11 +8,5 @@ To run: "python swing_app.py"
 
 Runs on: Python 2.7
 
-Module requirements:
-
-numpy = 1.14.0
-scipy = 0.17.0
-networkx = 2.0
-pyqtgraph = 0.10.0
-PyQt4
+Module requirements: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt4
 
