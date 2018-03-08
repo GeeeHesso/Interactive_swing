@@ -8,7 +8,5 @@ The folder "/network_data" contains a non exhausitve set of sample networks (in 
 
 To run: "python swing_app.py"
 
-Runs on: Python 2.7
-
-Module requirements: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt4
+Runs on: Python 3.6  with modules: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt5
 
