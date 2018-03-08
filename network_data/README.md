@@ -12,7 +12,7 @@ Sample networks in with ".csv" extension can be placed here.
 
  "### lines: from, to, susceptance, status (True:1 False:0)"
 
- Parameters are: integer bus ids of the nodes connected by the line, susceptance value, line status 1: connected, 0: disconnected
+ Parameters are: integer bus ids of the nodes connected by the line, line capacity, line status 1: connected, 0: disconnected
 
  Make sure to include both header lines in the ".csv" file.]
 
