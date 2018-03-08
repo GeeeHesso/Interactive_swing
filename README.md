@@ -10,5 +10,5 @@ To run: "python swing_app.py"
 
 Branch master runs on: Python 2.7  with modules: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt4 
 
-Branch update_python3_pyqt5 runs on: Python 3.6  with modules: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt5
+For Python 3, see branch update_python3_pyqt5
 
