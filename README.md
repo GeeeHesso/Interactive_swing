@@ -6,6 +6,7 @@ The folder "/network_data" contains a non exhausitve set of sample networks (in 
 
 To run: "python swing_app.py"
 $\sin\theta$
+![equation](https://latex.codecogs.com/gif.latex?1%2Bsin%28mc%5E2%29%0D%0A)
 Runs on: Python 2.7
 
 Module requirements: numpy = 1.14.0, scipy = 0.17.0, networkx = 2.0, pyqtgraph = 0.10.0, PyQt4
