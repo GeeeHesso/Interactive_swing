@@ -1,4 +1,6 @@
-from PyQt4.QtGui import QDialog, QLineEdit, QFormLayout, QPushButton, QDoubleValidator, QCheckBox, QFileDialog
+#from PyQt5.QtGui import QDialog, QLineEdit, QFormLayout, QPushButton, QDoubleValidator, QCheckBox, QFileDialog
+from PyQt5.QtGui import QDoubleValidator
+from PyQt5.QtWidgets import QDialog, QLineEdit, QFormLayout, QPushButton, QCheckBox, QFileDialog
 from functools import partial
 from os import getcwd, path
 import os, sys
@@ -53,18 +55,18 @@ class Dialog_node(QDialog):
 		if hasattr(self, 'entry_inertia'):
 			node['inertia'] = float(self.entry_inertia.text())
 		
-		print "New parameters set"
-		print "P {} ".format(node['power'])  
-		print "D {}, ".format(node['damping'])  
+		print("New parameters set")
+		print("P {} ".format(node['power']))
+		print("D {}, ".format(node['damping']))
 		if hasattr(self, 'entry_inertia'):
-			print "I {}".format(node['inertia'])
+			print("I {}".format(node['inertia']))
 		
 
 	# Set the event to restart simulation after closing dialog window
 	def closeEvent(self, *args, **kwargs):
 		QDialog.closeEvent(self,*args, **kwargs)
 		self.proc_ev.set()
-		print "You just closed the node-dialog window, simulation can continue!!!"
+		print("You just closed the node-dialog window, simulation can continue!!!")
 
 
 
@@ -105,15 +107,15 @@ class Dialog_edge(QDialog):
 	def button_click(self, edge):
 		edge['status'] = True if self.entry_status.checkState() == 2 else False
 		edge['susceptance'] = float(self.entry_susceptance.text())
-		print "New parameters set"
-		print "susceptance {}, status {}".format(edge['susceptance'], edge['status'])  
+		print("New parameters set")
+		print("susceptance {}, status {}".format(edge['susceptance'], edge['status']))
 
 
 	# Set the event to restart simulation after closing dialog window
 	def closeEvent(self, *args, **kwargs):
 		QDialog.closeEvent(self,*args, **kwargs)
 		self.proc_ev.set()
-		print "You just closed the edge-dialog window, simulation can continue!!!"
+		print("You just closed the edge-dialog window, simulation can continue!!!")
 
 
 
@@ -125,8 +127,8 @@ def dialog_load_network():
 	if path.isdir(dir_name) == False:
 		dir_name = getcwd()
 
-	f_name = QFileDialog.getOpenFileName(None,'Load Electic Network', directory = dir_name, filter = "Network files *.csv")
-	
+	f_name = QFileDialog.getOpenFileName(None,'Load Electic Network', directory = dir_name, filter = "Network files *.csv")[0]
+	print(f_name)
 	try:
 		assert(os.path.exists(f_name))
 	except AssertionError:

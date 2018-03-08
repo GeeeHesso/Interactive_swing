@@ -29,9 +29,10 @@ class Electrical_network():
 		self.graph.add_edges_from(lines)
 		self.state = State(self.graph.number_of_nodes()) 
 				
-		self.sm_id = filter(lambda n: self.graph.nodes[n]['sm']==True, self.graph.nodes)
-		self.load_id = filter(lambda n: self.graph.nodes[n]['sm']==False, self.graph.nodes)
-
+		self.sm_id = list(filter(lambda n: self.graph.nodes[n]['sm']==True, self.graph.nodes))
+		self.load_id = list(filter(lambda n: self.graph.nodes[n]['sm']==False, self.graph.nodes))
+		print(type(self.sm_id))
+		print(self.sm_id)
 		# unweighted incidence in shape (|nodes| x |edges|), column ordering is produced by graph.edges
 		self.incidence = incidence_matrix(self.graph, oriented = True)
 

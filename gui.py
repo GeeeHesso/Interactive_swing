@@ -1,4 +1,4 @@
-from PyQt4.QtCore import QThread, QTimer
+from PyQt5.QtCore import QThread, QTimer
 from pyqtgraph import GraphicsWindow, GraphItem, TextItem, ArrowItem
 import numpy as np
 from graphs import *
@@ -137,7 +137,7 @@ def onClick(mouse_ev, el_net, proc_ev, p_network):
 		e = list(el_net.graph.edges())[edge_id]
 		line_name = (el_net.graph.nodes[e[0]]['name'], el_net.graph.nodes[e[1]]['name'])
 		Dialog_edge(el_net.graph[e[0]][e[1]], line_name, proc_ev)
-	print "You just opened the entry dialog window!!! you are awesome!!!"
+	print("You just opened the entry dialog window!!! you are awesome!!!")
 
 
 ## Plotting line flows

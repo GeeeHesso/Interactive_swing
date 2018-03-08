@@ -2,11 +2,11 @@ from sys import exit, argv
 from gui import MainDisplay
 from graphs import Electrical_network
 from multiprocessing import Event
-from PyQt4.QtGui import QApplication
-from sample_networks import buses1, lines1
+from PyQt5.QtWidgets import QApplication
 from scipy import optimize
 from helper_fcts import steady_state_PF
 import numpy as np
+from dialog_ui import dialog_load_network
 
 # Script to test the layout of the main window (i.e. MainDisplay object)
 # It also allows to test the response of the network to clicks
@@ -15,16 +15,23 @@ import numpy as np
 
 def main():
 	
-	el_net = Electrical_network(buses1, lines1)
+	# Qt event loop 
+	app = QApplication(argv)
+
+	# Load network data
+	buses, lines = dialog_load_network()
+	
+	# Construct electrical network
+	el_net = Electrical_network(buses, lines)
+
 	node_nb = el_net.graph.number_of_nodes()
 	# Use scipy to solve the steady state power flow
 	sol = optimize.root(steady_state_PF, np.zeros(node_nb), args = (el_net, el_net.get_P()), jac=None, method='hybr')
-	print "SIMULATION SUCCESSFUL", sol.success
+	print("SIMULATION SUCCESSFUL", sol.success)
 	el_net.state.phase = sol.x
 
 	proc_ev = Event()
 	proc_ev.set()
-	app = QApplication(argv)
 	
 	# Create Main Display instance
 	test = MainDisplay(el_net, proc_ev)
