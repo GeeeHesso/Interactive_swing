@@ -6,9 +6,9 @@ Sample networks in with ".csv" extension can be placed here.
 
 &nbsp;&nbsp;&nbsp; "### buses: id, name, coord_x, coord_y, sm (True:1 False:0), power, damping, inertia"
 
-&nbsp;&nbsp;&nbsp; Parameters are: integer bus id starting from 0, bus name string, coordinates for graphical represeantation
-boolean to differentiate synchronous machines (sm) for nodes with first order dynamics, pwer, damping, inertia.
-Leave the inertia value empty if bus has no inertia
+&nbsp;&nbsp;&nbsp; Parameters are: integer bus id starting from 0, bus name string, cartesian coordinates for graphical 
+&nbsp;&nbsp;&nbsp; represeantation, boolean to differentiate synchronous machines (sm) from nodes with first order dynamics, 
+&nbsp;&nbsp;&nbsp; power, damping, inertia (CAREFUL: leave inertia value empty if bus isn't a synchrnous machine)
 
 &nbsp;&nbsp;&nbsp; "### lines: from, to, susceptance, status (True:1 False:0)"
 
